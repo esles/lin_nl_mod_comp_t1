@@ -172,9 +172,11 @@ endif
 tv(0) = ts
 av(0) = ai
 
-!====
+!=======================================
 
 !SUBROUTINE GET_INITIAL_DENSITY_PROFILE
+
+!write to match KBs
 
 !Initial profile for density perturbation
 
@@ -201,7 +203,7 @@ do j =1,rnum
 enddo
 
 
-!============
+!==========================================
 
 !SUBROUTINE scale_factor ???
 
