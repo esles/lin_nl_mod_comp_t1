@@ -57,7 +57,7 @@ ai = 1/(zi+1)
 write(*,*) 'Initial scalefactor',ai
 
 !
-tnum = 30000
+tnum = 3000
 !if static then 50000 is ok
 !if dynamic then need less (depending on epsil)
 
@@ -285,7 +285,7 @@ do j =1,rnum      !Start space loop
 
   enddo   !end time loop
 
-  
+
 
 enddo   !end space loop
 

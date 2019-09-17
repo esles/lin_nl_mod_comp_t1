@@ -1,4 +1,6 @@
-      program simsilun
+
+
+program simsilun
 ! code: SIMplified SILent UNiverse, https://bitbucket.org/bolejko/simsilun
 ! author: Krzysztof Bolejko
 ! disclaimer: There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -6,9 +8,9 @@
 ! licence: GNU General Public License version 3 or any later version.
       implicit none
 
-	integer I,Ii
-	integer, parameter :: Nx = 4  ! number of variables evolved with the Silent Universe
-	double precision X(Nx)
+      integer I,Ii
+      integer, parameter :: Nx = 4  ! number of variables evolved with the Silent Universe
+      double precision X(Nx)
 ! X(1) = density
 ! X(2) = expansion
 ! X(3) = shear
