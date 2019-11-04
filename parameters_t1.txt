@@ -1,0 +1,1 @@
+[array(['omega_m', 'omega_l', 'h0', 'lu', 'tu', 'mu', 'ls(c)'], dtype='<U7'), array([ 0.3 ,  0.7 , 69.  ,  1.  ,  1.  ,  1.  ,  2.98])]

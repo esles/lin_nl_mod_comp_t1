@@ -52,7 +52,7 @@ write(*,*) 'light speed', c
 
 !Initial Conditions
 
-zi = 1000
+zi = 1090.0
 ai = 1/(zi+1)
 write(*,*) 'Initial scalefactor',ai
 
@@ -115,8 +115,8 @@ rs = real(rmax - rmin)/rnum
 
 !====
 
-del0 = 0.1
-sigma = 10
+del0 = 0.002
+sigma = 20
 
 !=====
 
@@ -133,16 +133,19 @@ write(*,*) 'shape of tv',shape(tv)
 a0 = 1;
 
 !Omega Factors
-OmegaM = 0.27
+OmegaM = 0.308
 !OmegaL = 0.3
 OmegaL = 1 - OmegaM     !LCDM model constraint.
 write(*,*) 'Dimensionless Matter density', OmegaM
 write(*,*) 'Dimensionless DE density', OmegaL
 
 !Hubble Parameter
-H0 = 69                                     !Units: km/s/Mpc
+H0 = 67.810                                    !Units: km/s/Mpc
 Hb = (H0*1e3/(3.086e16*1e6))*31557600*1e9   !Units: 1/(Gyr)
 write(*,*) 'Present day Hubble parameter in units 1/Gyr ', Hb
+
+!UNITS!UNITS!UNITS
+!UNITS!UNITS!UNITS
 
 !The critical density (flat universe)
 rho_crit = 3*(Hb**2)/(8*pi*G)

@@ -1,5 +1,8 @@
 #First attempt at a header programme for the set-up and comparison of the two
 #models
+
+
+
 #Initialisation
 import numpy as np
 import scipy
@@ -20,9 +23,10 @@ parameters = []
 #(Assuming we can the import the values back into the fortran programms
 #which will require a rewrite)
 
+#PARAMETERS
 
 #SET PARAMETERS THAT YOU WILL VARY HERE
-#SUCH AS
+#Such as
 
 #The Matter Omega Parameter
 omega_m = 0.3
@@ -33,8 +37,14 @@ h0 = 69
 
 variables = [omega_m,omega_l,h0]
 
+print('variables', variables)
+
 #AND JUST COMPARE PHYSICAL CONSTANTS FOR NOW
 
+#NUMERICAL PARAMETERS
+#TIME steps
+
+#INITIAL Conditions
 
 #NO START WITH UNITS...
 
@@ -47,6 +57,8 @@ mu = 1
 
 measures = [lu,tu,mu]
 
+print('measures', measures)
+
 pi = np.pi
 
 print('the elements of the array should be (pi,)')
@@ -57,4 +69,56 @@ lightspeed = 2.98*(mu/tu)
 
 immutables = [lightspeed]
 
-parameters = [variables,measures,immutables]
+print('immutables', immutables)
+
+
+
+parameters_t1 = [variables,measures,immutables]
+print('parameters_t1:',parameters_t1)
+
+parameternames_t1 = ['variables','measures','imutables']
+
+prmtrnms_t2 = np.array(['omega_m','omega_l','h0','lu','tu','mu','ls(c)'])
+
+print('names (t2)',prmtrnms_t2)
+
+parameters_t2 = np.concatenate([variables,measures,immutables])
+print('parameters_t2 (concatenated):',parameters_t2)
+
+parameters_t3 = np.array(variables+measures+immutables)
+print('parameters_t3 (added):',parameters_t3)
+
+szpn = prmtrnms_t2.shape
+szprmtr = parameters_t3.shape
+
+print('shape of prmtr name array:', szpn)
+print('shape of prtmr value array:', szprmtr)
+
+prmtrdata = [prmtrnms_t2, parameters_t3]
+
+#np.savetxt('parameters.txt',prmtrdata,delimiter=',',fmt='%d')
+#np.savetxt('parameters.txt',prmtrdata,delimiter=',')
+np.savetxt('parameterst123.txt',parameters_t3,delimiter=',',fmt='%d')
+
+prmtrdt_rslt = str(prmtrdata)
+
+f = open('parameters_t1.txt','w+')
+f.write(prmtrdt_rslt)
+f = close()
+
+#f = open('parameters_t2.txt','w+')
+#f.write(prmtrdata)
+#f = close()
+
+#np.save('paramter_data.txt', prmtrdata)
+
+
+#COMPILE AND RUN FORTRAN PROGRAMMES
+
+#EXTRACT RELEVANT SAVED DATA
+
+#COMPARE RESULTS
+
+#PRINT AND SAVE
+
+#END
